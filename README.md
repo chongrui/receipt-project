@@ -10,6 +10,6 @@ version 0.15.1.
 ## Build & development
 
 Under project root folder:
- `npm insatll`
- `bower update`
- Run `gulp serve` for preview
+ 1. `npm insatll`
+ 2. `bower update`
+ 3. Run `gulp serve` for preview
