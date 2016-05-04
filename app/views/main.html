@@ -1,0 +1,80 @@
+<div class="jumbotron">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="five wide column"></div>
+      <div class="six wide column">
+          <h2 class="ui center aligned header"><img class="ui mini right spaced image" src="/images/logo.png">Arash, Ltd. Receipt</h2>
+      </div>
+      <div class="five wide column"></div>
+    </div>
+    <div class="row">
+      <div class="five wide column"></div>
+      <div class="four wide column">
+        <div class="ui right labeled input">
+          <div class="ui label">$</div>
+          <input type="text" ng-model="totalIncome" placeholder="Amount">
+        </div>
+      </div>
+      <div class="two wide column">
+        <button class="ui blue button" ng-click="calculateIncome()">Calculate</button>
+      </div>
+      <div class="five wide column"></div>
+    </div>
+  </div>
+  <br>
+  <div class="ui raised segment">
+  <a class="ui red ribbon label">Overview</a>
+  <div class="ui styled fluid accordion">
+    <div class="title" ng-repeat-start="item in items track by $index">
+      <div class="ui grid container">
+        <!--TODO: No hardcode inline style-->
+        <div class="five wide column" style="padding-bottom: 0rem;">
+          <i class="dropdown icon"></i>
+          {{item.name}}
+        </div>
+        <div class="six wide column" style="padding-bottom: 0rem;">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{item.percentage}}"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{item.percentage}}%">
+            </div>
+          </div>
+        </div>
+        <div class="two wide column" style="padding-bottom: 0rem;">
+          <!--TODO: Translation service-->
+          {{item.percentage}}%
+        </div>
+        <div class="three wide column" style="padding-bottom: 0rem;">
+          ${{item.amount ? item.amount : 0 | number : 2}}
+        </div>
+      </div>
+    </div>
+    <div class="content" ng-repeat-end>
+      <ng-include src="'views/children-table.html'"></ng-include>
+    </div>
+  </div>
+  </div>
+  <br>
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="six wide column"></div>
+      <div class="four wide column">
+        <div class="ui Small Fluid image">
+          <img src="/images/qr-code.png" class="visible content">
+        </div>
+      </div>
+      <div class="six wide column"></div>
+    </div>
+    <div class="row">
+      <div class="five wide column"></div>
+      <div class="six wide column">
+        <h4 class="ui center aligned header">
+          Save money. Live better!
+        </h4>
+      </div>
+      <div class="five wide column"></div>
+    </div>
+  </div>
+
+
+</div>
+

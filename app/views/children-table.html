@@ -1,0 +1,21 @@
+<div class="ui grid container" ng-repeat="subitem in item.subItems track by $index">
+  <!--TODO: No hardcode inline style-->
+  <div class="five wide column" style="padding-bottom: 0rem;">
+    <i class="icon"></i>
+    {{subitem.name}}
+  </div>
+  <div class="six wide column" style="padding-bottom: 0rem;">
+    <div class="progress">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{subitem.percentage}}"
+           aria-valuemin="0" aria-valuemax="100" style="width:{{subitem.percentage}}%">
+      </div>
+    </div>
+  </div>
+  <div class="two wide column" style="padding-bottom: 0rem;">
+    <!--TODO: Translation service-->
+    <span>&nbsp;&nbsp;&nbsp;{{subitem.percentage}}%</span>
+  </div>
+  <div class="three wide column" style="padding-bottom: 0rem;">
+    ${{item.amount ? item.amount : 0 | number : 2}}
+  </div>
+</div>
